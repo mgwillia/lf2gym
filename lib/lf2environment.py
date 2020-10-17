@@ -7,7 +7,7 @@
 from . import config
 from . import seleniumdriver
 from .lf2exception import lf2raise
-from .utils import png2rgb, rgb2gray, Recorder
+from .utils import png2rgb, Recorder
 
 import atexit
 import json
@@ -330,7 +330,7 @@ class LF2Environment():
         return i
         
     def get_observation(self):
-        return rgb2gray(self.get_cropped_screenshot())
+        return self.get_cropped_screenshot()
     
     def get_log(self):
         return self.driver.execute_script('return window.my_msg;')
