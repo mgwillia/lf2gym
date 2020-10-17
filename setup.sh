@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 function copy {
     md5_1=($(md5sum $1))
