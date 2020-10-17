@@ -91,7 +91,11 @@ class LF2SkipNWrapper():
         return self.observe()
 
     def observe(self):
-        return np.stack(self.frames, axis=2)
+        print(self.frames.shape)
+        print(np.stack(self.frames, axis=3).shape)
+        print(np.stack(self.frames, axis=-1).shape)
+        return np.stack(self.frames, axis=-1)
+        #return np.stack(self.frames, axis=2)
 
     def idle(self, duration=0): self.env.idle(duration)
     def get_log(self): return self.env.get_log()
