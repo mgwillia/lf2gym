@@ -34,7 +34,6 @@ class LF2Wrapper():
         return self.observe()
 
     def observe(self):
-        print(self.frames.shape)
         print(np.stack(self.frames, axis=3).shape)
         return np.stack(self.frames, axis=-1)
 
@@ -91,7 +90,6 @@ class LF2SkipNWrapper():
         return self.observe()
 
     def observe(self):
-        print(self.frames.shape)
         print(np.stack(self.frames, axis=3).shape)
         print(np.stack(self.frames, axis=-1).shape)
         return np.stack(self.frames, axis=-1)
