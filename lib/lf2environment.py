@@ -330,7 +330,10 @@ class LF2Environment():
         return i
         
     def get_observation(self):
-        return self.get_cropped_screenshot()
+        screenshot = self.get_cropped_screenshot()
+        print('screenshot like:')
+        print(screenshot.shape)
+        return self.get_cropped_screenshot()[:,:,:3]
     
     def get_log(self):
         return self.driver.execute_script('return window.my_msg;')
