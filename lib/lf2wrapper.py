@@ -86,6 +86,7 @@ class LF2SkipNWrapper():
     def reset(self, options=None):
         observation = self.env.reset(options)
         for _ in range(self.mem_len):
+            print(observation.shape)
             self.frames.append(observation)
         return self.observe()
 
