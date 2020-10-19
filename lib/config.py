@@ -182,6 +182,7 @@ class SkipNActionSpace():
     def __init__(self, num_frame, character=None, options=[]):
         if num_frame < 4: lf2raise('num_frame "%d" should be at least 4.' % num_frame)
         self.action_map = extend_action_map_sequence(create_skip_4_action_space(character, options), num_frame-4)
+        print("the real action map: " + str(self.action_map))
         self.n = len(self.action_map)
     def get(self, i):
         print("skipaction: " + str(i))
