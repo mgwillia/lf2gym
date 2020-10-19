@@ -75,14 +75,24 @@ class LF2SkipNWrapper():
         print(zip(*actions))
         print(flat_actions)
         #for action in zip(*actions):
-        for action in flat_actions:
+        print('frames length: " + str(len(self.frames)))
+        reward = []
+        done = []
+        info = []
+        for action in actions:
             print(action)
-            o, r, d, i = self.env.step(action)
-            observation = o
-            reward += r
-            done = done or d
-            info = info and i
+            sub_reward = 0.0
+            for sub_action in action:
+                o, r, d, i = self.env.step(sub_action)
+                observation = o
+                sub_reward += r
+                sub_done = sub_done or d
+                sub_info = sub_info and i
+            reward.append(sub_reward)
+            done.append(sub_done)
+            info.append(sub_info)
         self.frames.append(observation)
+        print('frames length: " + str(len(self.frames)))
         self.prev_action = self.curr_action
         self.curr_action = skip4_action
         return self.observe(), reward, done, info
