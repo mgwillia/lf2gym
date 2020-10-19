@@ -77,7 +77,7 @@ class LF2SkipNWrapper():
         #for action in zip(*actions):
         for action in flat_actions:
             print(action)
-            o, r, d, i = self.env.step(*action)
+            o, r, d, i = self.env.step(action)
             observation = o
             reward += r
             done = done or d
