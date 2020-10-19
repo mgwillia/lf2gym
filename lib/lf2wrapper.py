@@ -66,7 +66,7 @@ class LF2SkipNWrapper():
         self.prev_action = None
         self.curr_action = None
 
-    def step(self, *skip4_action):
+    def step(self, skip4_action):
         observation, reward, done, info = None, 0, False, True
         print("skip4_action: " + str(skip4_action))
         actions = [self.action_space.get(skip4) for skip4 in skip4_action]
