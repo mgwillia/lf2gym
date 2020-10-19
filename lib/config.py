@@ -170,6 +170,7 @@ class ActionSpace():
             self.action_map = action_map_2
         self.n = len(self.action_map)
     def get(self, i):
+        print("action: " + str(i))
         if i < 0 or i >= self.n: lf2raise('Action should be in (0, %d), rather than %d.' % (self.n-1, i))
         return self.action_map[i]
     def sample(self):
