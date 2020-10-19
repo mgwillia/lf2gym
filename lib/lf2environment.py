@@ -331,10 +331,6 @@ class LF2Environment():
         
     def get_observation(self):
         screenshot = self.get_cropped_screenshot()
-        print('screenshot like:')
-        print(screenshot.shape)
-        print('screenshot adjusted to:')
-        print(np.moveaxis(screenshot, -1, 0))
         return np.moveaxis(screenshot, -1, 0)
     
     def get_log(self):
