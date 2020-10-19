@@ -75,7 +75,7 @@ class LF2SkipNWrapper():
         print(zip(*actions))
         print(flat_actions)
         #for action in zip(*actions):
-        print('frames length: " + str(len(self.frames)))
+        print("frames length: " + str(len(self.frames)))
         reward = []
         done = []
         info = []
