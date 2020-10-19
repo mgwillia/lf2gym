@@ -68,6 +68,7 @@ class LF2SkipNWrapper():
 
     def step(self, *skip4_action):
         observation, reward, done, info = None, 0, False, True
+        print("skip4_action: " + str(skip4_action))
         actions = [self.action_space.get(skip4) for skip4 in skip4_action]
         for action in zip(*actions):
             o, r, d, i = self.env.step(*action)
