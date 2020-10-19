@@ -333,7 +333,9 @@ class LF2Environment():
         screenshot = self.get_cropped_screenshot()
         print('screenshot like:')
         print(screenshot.shape)
-        return screenshot
+        print('screenshot adjusted to:')
+        print(np.moveaxis(screenshot, -1, 0))
+        return np.moveaxis(screenshot, -1, 0)
     
     def get_log(self):
         return self.driver.execute_script('return window.my_msg;')
