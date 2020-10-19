@@ -92,7 +92,7 @@ class LF2SkipNWrapper():
             done.append(sub_done)
             info.append(sub_info)
         self.frames.append(observation)
-        print('frames length: " + str(len(self.frames)))
+        print("frames length: " + str(len(self.frames)))
         self.prev_action = self.curr_action
         self.curr_action = skip4_action
         return self.observe(), reward, done, info
