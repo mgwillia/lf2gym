@@ -71,7 +71,11 @@ class LF2SkipNWrapper():
         print("skip4_action: " + str(skip4_action))
         actions = [self.action_space.get(skip4) for skip4 in skip4_action]
         print(actions)
-        for action in zip(*actions):
+        flat_actions = [item for sublist in actions for item in sublist]
+        print(zip(*actions))
+        print(flat_actions)
+        #for action in zip(*actions):
+        for action in flat_actions:
             print(action)
             o, r, d, i = self.env.step(*action)
             observation = o
