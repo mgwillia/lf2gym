@@ -333,7 +333,7 @@ class LF2Environment():
         screenshot = self.get_cropped_screenshot()
         print('screenshot like:')
         print(screenshot.shape)
-        return self.get_cropped_screenshot()[:,:,:3]
+        return screenshot
     
     def get_log(self):
         return self.driver.execute_script('return window.my_msg;')
