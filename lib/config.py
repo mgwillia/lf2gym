@@ -184,6 +184,7 @@ class SkipNActionSpace():
         self.action_map = extend_action_map_sequence(create_skip_4_action_space(character, options), num_frame-4)
         self.n = len(self.action_map)
     def get(self, i):
+        print("skipaction: " + str(i))
         if i < 0 or i >= self.n: lf2raise('Action should be in (0, %d), rather than %d.' % (self.n-1, i))
         return self.action_map[i]
     def sample(self):
